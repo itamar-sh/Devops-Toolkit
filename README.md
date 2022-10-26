@@ -9,4 +9,4 @@ empty folder
   src="/images/s1.png"
   alt="Alt text"
   title="Optional title"
-  style="display: inline-block; margin: 0 auto;" width="145" height="145">
+  style="display: inline-block; margin: 0 auto;" width="500" height="500">
