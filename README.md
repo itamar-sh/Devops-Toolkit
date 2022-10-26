@@ -22,6 +22,10 @@ The folder may still be the same, but a lot happened in the bakground.
 
 ### Make Changes
 
+For now we will ignore the fact that each command require commit and add and sometimes push and more.
+
+#### new file
+
 Each one of the following command will make a new file:
 
 ` git "" >> file1 `
@@ -32,11 +36,14 @@ Each one of the following command will make a new file:
 
 ` git >> file4 `
 
-This is the current state:
+This is the current state: (In our Computer)
 
 <img
   src="/images/s2.png"
   alt="Alt text"
   title="Optional title"
   style="margin: 0 auto;" width="750" height="450">
+  
+#### remove file
 
+` git rm file1 `
