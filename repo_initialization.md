@@ -3,7 +3,7 @@ We want to start from basic folder and through examples we will learn the basic 
 
 ### On This section we will cover the following commands
 ` git init `
-` git "" >> file1 `
+` git "" >> file1 `dcdcdcd
 ` git "" > file2 `
 ` git > file3 `
 ` git >> file4 `
