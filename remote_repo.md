@@ -2,13 +2,18 @@
 In most cases we work with a repo stored on cloud. Now we will understand the basics to work this way.
 
 ### On This section we will cover the following commands
+
 ` git remote -v `
+
 ` git remote set-url <distant_repo_nickname> <distant_repo_url> `
+
 ` ssh-keygen -t <algorithm_name> -C "<your_email@example.com>" `
 
 
 ### Check currently remote repositories
+
 ` git remote -v `
+
 The result will be something like that:
 <img
   src="/images/remote_repo_images/1.png"
@@ -18,16 +23,22 @@ The result will be something like that:
 
 ### Set new remote repo
 ` git remote set-url <distant_repo_nickname> <distant_repo_url> `
+
 for example:
+
 ` git remote set-url origin https://github.com/itamar-sh/Git-Toolkit.git `
 
 ### Establish ssh connection
 Github or other remote version control can block your access via username and password. Since using ssh keys considered more secure way, we will learn how to use it.
 
 #### make new ssh-key in your computer
+
 ` ssh-keygen -t <algorithm_name> -C "<your_email@example.com>" `
+
 For example:
+
 ` ssh-keygen -t ed25519 -C "itamar.shechter123@gmail.com" `
+
 <img
   src="/images/remote_repo_images/2.png"
   alt="Alt text"
