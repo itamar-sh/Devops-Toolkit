@@ -19,7 +19,7 @@ The result will be something like that:
   src="/images/remote_repo_images/1.png"
   alt="Alt text"
   title="Optional title"
-  style="margin: 0 auto;">
+  style="margin: 0 auto;" width="500" height="450">
 
 ### Set new remote repo
 ` git remote set-url <distant_repo_nickname> <distant_repo_url> `
@@ -43,7 +43,7 @@ For example:
   src="/images/remote_repo_images/2.png"
   alt="Alt text"
   title="Optional title"
-  style="margin: 0 auto;" width="750" height="450">
+  style="margin: 0 auto;" width="1000" height="450">
 
 #### upload ssh-key to your github
 Search for the place in github and copy there the key fingertip printed from the last command.
