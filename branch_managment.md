@@ -1,7 +1,8 @@
 # Branch Managment
 
 ### On This section we will cover the following commands
-
+` git push `
+` git reset `
 
 ### Replace a branch in a remote repositories
 In case we want to replace the remote branch with our branch we can use push force.
