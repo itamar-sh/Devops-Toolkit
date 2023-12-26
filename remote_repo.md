@@ -19,7 +19,7 @@ The result will be something like that:
   src="/images/remote_repo_images/1.png"
   alt="Alt text"
   title="Optional title"
-  style="margin: 0 auto;" width="750" height="450">
+  style="margin: 0 auto;">
 
 ### Set new remote repo
 ` git remote set-url <distant_repo_nickname> <distant_repo_url> `
