@@ -15,11 +15,12 @@ In most cases we work with a repo stored on cloud. Now we will understand the ba
 ` git remote -v `
 
 The result will be something like that:
+
 <img
   src="/images/remote_repo_images/1.png"
   alt="Alt text"
   title="Optional title"
-  style="margin: 0 auto;" width="500" height="450">
+  style="margin: 0 auto;" width="1000" height="450">
 
 ### Set new remote repo
 ` git remote set-url <distant_repo_nickname> <distant_repo_url> `
