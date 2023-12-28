@@ -11,6 +11,8 @@
 
 ` git log --oneline `
 
+` git log --graph --all --decorate --oneline `
+
 ### See the chanes that has been made in a specific commit
 
 ` git show <commit-hash> `
