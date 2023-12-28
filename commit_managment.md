@@ -9,9 +9,29 @@
 
 ### See all the commits in the branch
 
+Everything in one line.
+
 ` git log --oneline `
 
+Graph about all branches commits.
+
 ` git log --graph --all --decorate --oneline `
+
+Commits relevant only to a specific file.
+
+` git log filename.txt `
+
+Commits relevant only to a specific lines.
+
+` git log -L 50,150:filename.txt `
+
+Incluse the diff of the changes.
+
+` git log -p `
+
+Show changes of only specific line or a file.
+
+` git log -p -L 50,150:filename.txt `
 
 ### See the chanes that has been made in a specific commit
 
