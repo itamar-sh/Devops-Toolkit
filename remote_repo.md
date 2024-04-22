@@ -49,3 +49,9 @@ For example:
 #### upload ssh-key to your github
 Search for the place in github and copy there the key fingertip printed from the last command.
 Right now it's like that: settings -> ssh and gps -> add new ssh key.
+
+### Clone and work remotely after ssh-key established
+After both a key was genreated and the key finger tips added to github.
+Go to a repo -> press on 'code' -> ssh part and copy the command.
+Go to Terminal and write:
+` git clone <ssh-command-copied> `
