@@ -1,0 +1,17 @@
+# FROM - load another image before this layer
+FROM ubuntu:22.04
+
+# ENV - Define environment variable
+ENV WORKSPACE=/local/worksapce
+ENV USER=1234
+ENV GROUP=1234
+
+# WORKDIR - Change workdir
+WORKDIR ${WORKSPACE}
+
+# COPY - copy files to the target image file.
+COPY /usr/lib/libmypackage.so .
+COPY --chown=${USER}:${GROUP} . .
+
+# RUN - run shell commands
+RUN sudo apt-get update
