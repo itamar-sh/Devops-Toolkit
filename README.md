@@ -1,7 +1,2 @@
-# Git-Toolkit
-List of commands and explanations related to git.
-
-## Repo Initialization
-` git init `
-` git "" > file.txt `
-` git clone <repo-url> `
+# Devops toolkit
+This repo is dedicated ..
