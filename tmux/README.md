@@ -1,5 +1,4 @@
 # Tmux
-
 tmux is a terminal multiplexer.
 It allows you to create several "pseudo terminals" from a single terminal.
 It has a lot of more than simply split your terminal to panes.
