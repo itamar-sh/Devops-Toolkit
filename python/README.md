@@ -63,3 +63,18 @@ There is a basic template in the package ` python_package_template `.
 After the code is ready you can use the build command:
 
 ` python3 -m build python_package `
+
+
+# Python compilation and execution
+Python runs as an interpreted languag, which means the code is executed line by line, rather beign fully compiled to machine code before it runs.
+
+The python interpreter takes python files and translate this source code into bytecode, which is a lower-level, platform-independent representation of the code. This is .pyc file and are usually stoed in a __pychache_ directory.
+The bytecode is stored as binary but it's still not CPU arch bounded and is meaning is more like assembler.
+The python interpreter is a C program with library in /usr/lib/python3 and binary at /usr/bin/python3 and it's already compiled to machine code for the OS and CPU architecure.
+
+The second stage is to translate the bytecode into machine instructions specific to your system. This done by something called Python VIrtual Machine. The results are binary files and can be stored as .exe or .bin.
+
+# Wheel
+A python wheel is a collection of files and metadata bundled togoether. It's compiled for specific python version and contains python packages. It can not be compiled for many platforms but pip knows to give you the specific system architecture and operatin system you use.
+
+The goal it to store compiled package, a complete software, along with all the extra metadata and configurations to easy deploy the library.
