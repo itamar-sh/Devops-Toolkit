@@ -82,3 +82,69 @@ BusyBox terminal:
 - ` wget -O- learning-service `
 - ` wget -O- http://learning-service.default.svc.cluster.local `
 
+# Expose a group of Pods to Internet directly via NodePort service
+When you create a NodePort service, Kubernetes opens a port on one or more of the nodes and it allows in at a specific port number.
+
+7) Make http request to the NodePort service from IP, from service name, from DNS server:
+General Termianl:
+- ` kubectl get nodes -o wide `
+BusyBox terminal:
+- ` wget -O- <node_ip:30076> `
+- ` wget -O- echo-service `
+- ` wget -O- http://echo-service.default.svc.cluster.local `
+
+# Examine a LoadBalancer Service
+
+A LoadBalancer service in Kubernetes allows exposing a group of Pods to the internet using a cloud provider's load balancer.
+
+1. **Deployment and Service Setup:**
+   - Apply the `frontend-ui.yaml` file:
+     ```bash
+     kubectl apply -f frontend-ui.yaml
+     ```
+     This creates:
+     - A namespace (`frontend`).
+     - A deployment (`frontend-ui`) with three Pods.
+     - A LoadBalancer service (`frontend-service`) targeting Pods with the label `app=frontend-ui`.
+
+2. **Service Details:**
+   - Verify the service details:
+     ```bash
+     kubectl get services -n frontend
+     ```
+   - The `frontend-service` is of type `LoadBalancer`, with a `ClusterIP` and an external IP in `Pending` status (as this example uses Minikube, which doesn’t support automatic external IP allocation).
+
+3. **Query the Service:**
+   - Create a BusyBox pod in the same namespace:
+     ```bash
+     kubectl apply -f busybox-ui.yaml
+     ```
+   - Exec into the BusyBox pod:
+     ```bash
+     kubectl -n frontend exec -it busybox-ui -- sh
+     ```
+   - Query the service using its name and DNS:
+     ```bash
+     wget -O- frontend-service
+     wget -O- frontend-service.frontend.svc.cluster.local
+     ```
+   - The output confirms the service is functioning, returning HTML data from the frontend Pods.
+
+4. **Simulate External Access with Port Forwarding:**
+   - Retrieve Pod names in the `frontend` namespace:
+     ```bash
+     kubectl get pods -n frontend
+     ```
+   - Port forward one of the Pods to access it locally:
+     ```bash
+     kubectl port-forward <pod_name> 8080:4173 -n frontend
+     ```
+   - Open the app in a browser at `http://localhost:8080`, which combines frontend and backend data into a webpage.
+
+5. **Using Minikube for LoadBalancer Access:**
+   - Minikube supports LoadBalancer services via specific configurations. Refer to the [Minikube documentation](https://minikube.sigs.k8s.io/docs/) under "LoadBalancer Access" for details.
+
+6. **Kubernetes Learning Resources:**
+   - Suggested resources include Kubernetes networking courses on LinkedIn Learning, KubeCon talks, and TechWorld with Nana.
+
+This exercise demonstrates the creation and use of a LoadBalancer service and how to access services locally when an external IP is unavailable.
