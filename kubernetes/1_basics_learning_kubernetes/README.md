@@ -1,4 +1,4 @@
-# Kubernetes
+# 1 Kubernetes - Basic Learning Kubernetes
 
 Cluster - instance of Kubernetes. Each cluster has control plane and at least one worker node.
 
@@ -33,6 +33,14 @@ The ` kind: <entity> ` define which entity to create.
 
 ## Namespace
 Namespace let you isolate and organize your applications and microservices.
+
+Each Namespace should use his own ConfigMap and don't refer to others ConfigMap.
+
+Each Namespace should use his own Secret and don't refer to others Secret.
+
+Other services can be used between namespaces like databases.
+
+Volume and Nodes are not defined inside any namespace and always in global context.
 
 ` kubectl get namespaces ` - Give info about the namespaces created by the cluster.
 

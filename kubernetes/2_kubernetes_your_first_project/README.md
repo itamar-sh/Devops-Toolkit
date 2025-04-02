@@ -1,4 +1,4 @@
-# Kubernetes - First Projbect
+# 2 - Kubernetes - First Project
 
 ## Activate local website via Docker and Kubernetes
 Our goal it to create a static website which the server is supported by kubernetes.
@@ -79,14 +79,24 @@ It packages all the application's manifest into something called Helm Chart.
 Helm consists of: 1) Helm metadata, 2) Chart values, 3) Chart templates.
 
 Create Helm Chart:
+
 1) ` brew install helm `
+
 2) Create chart.yaml file manually. This is an app.
+
 3) Create values.yaml file manually. This file will store the chart values.
+
 3_optional) ` helm show all ` - gives us all the data about the chart.
+
 4) ` mkdir templates ` - We need such directory to store the templates.
+
 5) Create new deployment.yaml, ingress.yaml and service.yaml with variables instead of hard coded names inside templates directory.
-5_optiona) ` helm template ` - render templates and see they are good.
+
+5_optional) ` helm template ` - render templates and see they are good.
+
 6) ` helm install explore-california-website ./chart ` - Create helm chart.
+
+6_optional) ` helm install explore-california-website --values=another-values-file.yaml ./chart ` - Use another values.yaml file, mainly for debugging.
 
 
 # Kubernetes - Real Live working website in a kubernetes cluster
@@ -97,12 +107,19 @@ AWS provide us ALB ingress controller for the load balancer instead of the one o
 We will need to create the cluster in AWS - we have the ` create_cluster.sh ` script for that. Keep in mind for config values to connect to aws.
 
 Useful commands:
+
 - ` aws eks update-kubeconfig --name explorecaliforina.com `
+
 - ` aws ecr describe-repositories `
+
 - ` aws ecr get-login-password ` -  aws ecr get-login-password is what you would run to get the password for your Docker registry within ECS. Remember, 'AWS' is always the user when using ECS.
+
 - ` docker login "$registery" --username AWS --password "$password" `
+
 - ` docker tag explorecalifornia.com:latest "${registery}:latest"`
+
 - ` docker push "${registery}:latest" `
+
 - ` kubectl create secret docker-registery explore-california --docker-server$register --docker-username=AWS --docker-password=$password `
 
 You need to modify your Service so that it creates a "NodePort" type Service if it is using a "ClusterIP" type. You will also need to modify your Ingress to add annotations that tell Kubernetes to use this ingress controller.

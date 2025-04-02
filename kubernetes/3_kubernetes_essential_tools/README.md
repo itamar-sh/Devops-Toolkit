@@ -1,4 +1,4 @@
-# Kubernetes essential tools
+# 3 - Kubernetes essential tools
 
 # 1 - Kubernetes command line tools
 
@@ -206,20 +206,22 @@ Upgrade applications without manually editing every resource.
 
 - ` helm create <chart-name> ` - Creates a directory structure for a new Helm chart.
 Including:
-1) ` templates/: ` - Contains Kubernetes manifest files (e.g., Deployments, Services).
-2) ` Chart.yaml: ` - Metadata about the chart (name, version, description).
-3) ` values.yaml: ` - Default configuration values for the chart.
-You cam customize the chart by:
-1) Add Kubernetes manifests to the templates/ directory.
-2) Edit Chart.yaml with relevant details like version and description.
-3) Define default values in values.yaml for customizable configurations.
+   1) ` templates/: ` - Contains Kubernetes manifest files (e.g., Deployments, Services).
+   2) ` Chart.yaml: ` - Metadata about the chart (name, version, description).
+   3) ` values.yaml: ` - Default configuration values for the chart.
+   You cam customize the chart by:
+   1) Add Kubernetes manifests to the templates/ directory.
+   2) Edit Chart.yaml with relevant details like version and description.
+   3) Define default values in values.yaml for customizable configurations.
 
 - `helm install <release-name> ./<chart-directory> ` - Deploy the Chart.
 
 Example:
-1) ` helm repo add bitnami https://charts.bitnami.com/bitnami `
-2) ` helm search repo bitnami `
-3) ` helm install my-release bitnami/nginx `
+   1) ` helm repo add bitnami https://charts.bitnami.com/bitnami `
+
+   2) ` helm search repo bitnami `
+
+   3) ` helm install my-release bitnami/nginx `
 
 ## Kubespray: Simplifying Kubernetes Cluster Deployment
 Kubespray is an open-source tool that automates the deployment and management of Kubernetes clusters. Built on Ansible, it provides a powerful and flexible solution for creating highly available, production-grade Kubernetes clusters across a variety of environments.
@@ -240,17 +242,26 @@ Ansible-powered Deployment: Uses Ansible Playbooks to automate cluster setup and
 Multi-platform Support: Compatible with AWS, GCP, Azure, on-premises infrastructure, bare metal servers, and virtualized environments.
 
 Steps to Deploy Kubernetes with Kubespray:
+
 1. Clone the Kubespray Repository:
-` git clone https://github.com/kubernetes-sigs/kubespray.git `
-` cd kubespray `
+
+   ` git clone https://github.com/kubernetes-sigs/kubespray.git `
+
+   ` cd kubespray `
 2. Install Dependencies:
-` pip install -r requirements.txt `
+
+   ` pip install -r requirements.txt `
 3. Create an Inventory File: Define your cluster configuration (e.g., nodes, IP addresses, roles).
-` cp -r inventory/sample inventory/mycluster `
-` declare -a IPS=(192.168.0.1 192.168.0.2 192.168.0.3) `
-` CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]} `
+
+   ` cp -r inventory/sample inventory/mycluster `
+
+   ` declare -a IPS=(192.168.0.1 192.168.0.2 192.168.0.3) `
+
+   ` CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]} `
+
 4. Deploy the Cluster:
-` ansible-playbook -i inventory/mycluster/hosts.yaml --become --become-user=root cluster.yml `
+
+   ` ansible-playbook -i inventory/mycluster/hosts.yaml --become --become-user=root cluster.yml `
 
 Kubespray can't be used for context switching.
 

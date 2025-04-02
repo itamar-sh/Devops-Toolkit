@@ -1,4 +1,4 @@
-# Kubernetes Microservices
+# 4 - Kubernetes Microservices
 
 Kubernetes services provide a way to expose a set of pods as a network service with a stable IP address or DNS name. This simplifies communication between components, as pods' IPs are dynamic and can change frequently. Services also enable load balancing across pods.
 
